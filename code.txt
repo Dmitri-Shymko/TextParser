@@ -1,0 +1,42 @@
+void applyBrakes() {
+    // the "if" clause: bicycle must be moving
+    if (isMoving){
+        // the "then" clause: decrease current speed
+        currentSpeed--;
+    }
+void applyBrakes() {
+    // same as above, but without braces
+    if (isMoving)
+        currentSpeed--;
+}
+void applyBrakes() {
+    if (isMoving) {
+        currentSpeed--;
+    }
+else {
+        System.err.println("The bicycle has already stopped!");
+    }
+class IfElseDemo {
+    public static void main(String[] args) {
+
+        int testscore = 76;
+        char grade;
+
+        if (testscore >= 90) {
+            grade = 'A';
+        }
+else if (testscore >= 80) {
+            grade = 'B';
+        }
+else if (testscore >= 70) {
+            grade = 'C';
+        }
+else if (testscore >= 60) {
+            grade = 'D';
+        }
+else {
+            grade = 'F';
+        }
+System.out.println("Grade = " + grade);
+    }
+}
