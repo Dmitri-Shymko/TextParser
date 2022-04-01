@@ -1,0 +1,29 @@
+Sentence # 1 is: 1.
+Sentence # 2 is: The if-then and if-then-else Statements
+1.1.
+Sentence # 3 is: The if-then Statement
+The if-then statement is the most basic of all the control flow statements.
+Sentence # 4 is: It tells your program to execute a certain section of code only if a particular test evaluates to true.
+Sentence # 5 is: For example, the Bicycle class could allow the brakes to decrease the bicycle's speed only if the bicycle is already in motion.
+Sentence # 6 is: One possible implementation of the applyBrakes method could be as follows:
+s{174}s{174}
+If this test evaluates to false (meaning that the bicycle is not in motion), control jumps to the end of the if-then statement.
+Sentence # 7 is: In addition, the opening and closing braces are optional, provided that the "then" clause contains only one statement:
+s{174}
+Deciding when to omit the braces is a matter of personal taste.
+Sentence # 8 is: Omitting them can make the code more brittle.
+Sentence # 9 is: If a second statement is later added to the "then" clause, a common mistake would be forgetting to add the newly required braces.
+Sentence # 10 is: The compiler cannot catch this sort of error; you'll just get the wrong results.
+Sentence # 11 is: 1.2.
+Sentence # 12 is: The if-then-else Statement
+The if-then-else statement provides a secondary path of execution when an "if" clause evaluates to false.
+Sentence # 13 is: You could use an if-then-else statement in the applyBrakes method to take some action if the brakes are applied when the bicycle is not in motion.
+Sentence # 14 is: In this case, the action is to simply print an error message stating that the bicycle has already stopped.
+Sentence # 15 is: s{174} s{174}s{174}
+The following program, IfElseDemo, assigns a grade based on the value of a test score: an A for a score of 90% or above, a B for a score of 80% or above, and so on.
+Sentence # 16 is: s{174} s{174} s{174} s{174} s{174}
+        s{174}
+The output from the program is:
+    Grade = C
+You may have noticed that the value of testscore can satisfy more than one expression in the compound statement: 76 >= 70 and 76 >= 60.
+Sentence # 17 is: However, once a condition is satisfied, the appropriate statements are executed (grade = 'C';) and the remaining conditions are not evaluated.

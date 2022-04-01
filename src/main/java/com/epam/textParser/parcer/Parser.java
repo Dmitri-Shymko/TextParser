@@ -1,7 +1,6 @@
 package com.epam.textParser.parcer;
 
-import com.epam.textParser.entity.CompositeText;
-import com.epam.textParser.pattern.MyPattern;
+import java.util.TreeMap;
 
 public abstract class Parser {
     private Parser nextParser;
@@ -21,5 +20,10 @@ public abstract class Parser {
         this.nextParser = nextParser;
     }
 
-    public abstract void parse(String textFromFile);
+    public abstract void parseToFile(String inputText);
+
+    public abstract TreeMap<Integer, String> parseToMap(String inputText);
+
+    public abstract String parseToString(String inputText);
+
 }

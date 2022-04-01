@@ -1,12 +1,17 @@
 package com.epam.textParser.parcer;
 
+import com.epam.textParser.entity.FileName;
 import com.epam.textParser.logic.Util;
 import com.epam.textParser.pattern.MyPattern;
 
+import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CodeParser extends Parser{
+public class CodeParser extends Parser {
+
+    public TreeMap<Integer, String> codeMap = new TreeMap<>();
+
     public CodeParser() {
     }
 
@@ -15,19 +20,42 @@ public class CodeParser extends Parser{
     }
 
     @Override
-    public void parse(String textFromFile) {
+    public void parseToFile(String inputText) {
+        int count = 1;
         Pattern pattern = Pattern.compile(MyPattern.CODE_REGEX);
-        Matcher matcher = pattern.matcher(textFromFile);
+        Matcher matcher = pattern.matcher(inputText);
 
-        if (textFromFile != null) {
+        if (inputText != null) {
             while (matcher.find()) {
-                String outputText = matcher.group();
-                System.out.println(outputText);
-                Util.makeFile("code.txt", outputText + "\n");
+                Util.makeFile(FileName.CODE, "Code block # " + count + " is: " + matcher.group() + "\n");
+                count++;
             }
 
         } else if (getNextParser() != null) {
-            getNextParser().parse(textFromFile);
+            getNextParser().parseToFile(inputText);
         }
+    }
+
+    @Override
+    public TreeMap<Integer, String> parseToMap(String inputText) {
+
+        Pattern pattern = Pattern.compile(MyPattern.CODE_REGEX);
+        Matcher matcher = pattern.matcher(inputText);
+
+        try {
+            while (matcher.find()) {
+                codeMap.put(matcher.start(), matcher.group());
+            }
+
+        } catch (NullPointerException e) {
+            System.err.println(e);
+        }
+
+        return codeMap;
+    }
+
+    @Override
+    public String parseToString(String inputText) {
+        return null;
     }
 }

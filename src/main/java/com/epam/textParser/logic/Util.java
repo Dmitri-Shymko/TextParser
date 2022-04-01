@@ -37,4 +37,13 @@ public class Util {
         }
     }
 
+    public static void clearFile(String filename) {
+        try {
+            FileWriter fw = new FileWriter(filename);
+            fw.close();
+        } catch (IOException e) {
+            System.err.println(e);
+        }
+    }
+
 }

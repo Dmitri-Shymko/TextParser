@@ -8,24 +8,10 @@ public class MyPattern {
     public static final String PARAGRAPH_REGEX = "(?m)(?=^\\s{4})";
     public static final String SENTENCE_REGEX =
             "[^.!?\\s][^.!?]*(?:[.!?](?!['\"]?\\s|$)[^.!?]*)*[.!?]?['\"]?(?=\\s|$)";
-
-
     public static final String CODE_REGEX =
-            "((void)\\s\\w+\\(\\)\\s\\{([^}]*?)\\})|else\\s\\{([^}]*?)\\}|(class\\s\\w+\\s\\{([^}]*?)\\})|else\\sif\\s\\(\\D*\\d*\\)\\s\\{([^}]*?)\\}|(System\\D*\\})";
+            "((void)\\s\\w+\\(\\)\\s\\{([^}]*?)(\\})|(\\s\\}))|else\\s\\{([^}]*?)\\}|(class\\s\\w+\\s\\{([^}]*?)\\})|else\\sif\\s\\(\\D*\\d*\\)\\s\\{([^}]*?)\\}|(System\\D*\\})";
     public static final String WORD_REGEX = "[a-zA-Z]+";
-
-
-
-    public static boolean CompareParagraph(String text) {
-
-        boolean temp = false;
-        Pattern pattern = Pattern.compile(PARAGRAPH_REGEX);
-        Matcher matcher = pattern.matcher(text);
-        if (matcher.matches()) {
-            temp = true;
-        }
-        return temp;
-    }
+    public static final String SYMBOL_REGEX = "\\W|\\d";
 
     public static boolean CompareSentence(String text) {
 
