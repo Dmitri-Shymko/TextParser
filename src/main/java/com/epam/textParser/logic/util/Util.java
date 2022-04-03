@@ -1,4 +1,4 @@
-package com.epam.textParser.logic;
+package com.epam.textParser.logic.util;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Util {
 
-    public static String inputFileText = "Empty file!";
+    private static String inputFileText = "Empty file!";
 
     public static String scanFile(String filename) {
         try {

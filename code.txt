@@ -1,0 +1,46 @@
+Code block # 1 is: void applyBrakes() {
+    // the "if" clause: bicycle must be moving
+    if (isMoving){
+        // the "then" clause: decrease current speed
+        currentSpeed--;
+    }
+Code block # 2 is: 
+}
+Code block # 3 is: void applyBrakes() {
+    // same as above, but without braces
+    if (isMoving)
+        currentSpeed--;
+}
+Code block # 4 is: void applyBrakes() {
+    if (isMoving) {
+        currentSpeed--;
+    }
+Code block # 5 is: else {
+        System.err.println("The bicycle has already stopped!");
+    }
+Code block # 6 is: 
+}
+Code block # 7 is: class IfElseDemo {
+    public static void main(String[] args) {
+
+        int testscore = 76;
+        char grade;
+
+        if (testscore >= 90) {
+            grade = 'A';
+        }
+Code block # 8 is: else if (testscore >= 80) {
+            grade = 'B';
+        }
+Code block # 9 is: else if (testscore >= 70) {
+            grade = 'C';
+        }
+Code block # 10 is: else if (testscore >= 60) {
+            grade = 'D';
+        }
+Code block # 11 is: else {
+            grade = 'F';
+        }
+Code block # 12 is: System.out.println("Grade = " + grade);
+    }
+}

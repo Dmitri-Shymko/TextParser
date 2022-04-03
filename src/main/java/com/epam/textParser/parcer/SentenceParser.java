@@ -1,17 +1,16 @@
 package com.epam.textParser.parcer;
 
 import com.epam.textParser.entity.FileName;
-import com.epam.textParser.logic.Util;
+import com.epam.textParser.logic.util.Util;
 import com.epam.textParser.pattern.MyPattern;
 
-import java.util.ArrayList;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SentenceParser extends Parser {
 
-    public String sentenceString = new String();
+    private String sentenceString = new String();
     public TreeMap<Integer, String> sentenceMap = new TreeMap<>();
 
     public SentenceParser() {
