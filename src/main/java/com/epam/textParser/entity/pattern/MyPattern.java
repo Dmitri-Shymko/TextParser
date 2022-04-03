@@ -1,7 +1,4 @@
-package com.epam.textParser.pattern;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+package com.epam.textParser.entity.pattern;
 
 public class MyPattern {
 
@@ -12,16 +9,7 @@ public class MyPattern {
             "((void)\\s\\w+\\(\\)\\s\\{([^}]*?)(\\})|(\\s\\}))|else\\s\\{([^}]*?)\\}|(class\\s\\w+\\s\\{([^}]*?)\\})|else\\sif\\s\\(\\D*\\d*\\)\\s\\{([^}]*?)\\}|(System\\D*\\})";
     public static final String WORD_REGEX = "[a-zA-Z]+";
     public static final String SYMBOL_REGEX = "\\W|\\d";
-
-    public static boolean CompareSentence(String text) {
-
-        boolean temp = false;
-        Pattern pattern = Pattern.compile(SENTENCE_REGEX);
-        Matcher matcher = pattern.matcher(text);
-        if (matcher.matches()) {
-            temp = true;
-        }
-        return temp;
-    }
+    public static final String VOWEL_REGEX = "\\b[aeiou|AEIOU].*?\\b";
+    public static final String CONSONANTS_REGEX = "\\b[bcdfgjklmnpqstvxzhrwy|BCDFGJKLMNPQSTVXZHRWY].*?\\b";
 
 }

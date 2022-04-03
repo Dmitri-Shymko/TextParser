@@ -2,7 +2,7 @@ package com.epam.textParser.parcer;
 
 import com.epam.textParser.entity.FileName;
 import com.epam.textParser.logic.util.Util;
-import com.epam.textParser.pattern.MyPattern;
+import com.epam.textParser.entity.pattern.MyPattern;
 
 import java.util.TreeMap;
 import java.util.regex.Matcher;
