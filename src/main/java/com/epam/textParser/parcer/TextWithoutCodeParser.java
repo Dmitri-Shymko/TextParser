@@ -8,23 +8,13 @@ import java.util.regex.Pattern;
 
 public class TextWithoutCodeParser extends Parser {
 
-    public String textWithoutCode = new String();
+    private String textWithoutCode = new String();
 
     public TextWithoutCodeParser() {
     }
 
     public TextWithoutCodeParser(Parser nextParser) {
         super(nextParser);
-    }
-
-    @Override
-    public Parser getNextParser() {
-        return super.getNextParser();
-    }
-
-    @Override
-    public void setNextParser(Parser nextParser) {
-        super.setNextParser(nextParser);
     }
 
     @Override

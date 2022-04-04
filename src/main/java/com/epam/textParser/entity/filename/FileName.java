@@ -1,4 +1,4 @@
-package com.epam.textParser.entity;
+package com.epam.textParser.entity.filename;
 
 public class FileName {
     public static final String SENTENCES = "sentences.txt";

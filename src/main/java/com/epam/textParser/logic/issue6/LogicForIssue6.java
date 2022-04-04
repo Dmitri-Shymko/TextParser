@@ -1,8 +1,10 @@
 package com.epam.textParser.logic.issue6;
 
-import com.epam.textParser.entity.FileName;
+import com.epam.textParser.entity.filename.FileName;
 import com.epam.textParser.logic.util.Util;
 import com.epam.textParser.entity.pattern.MyPattern;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,8 +16,10 @@ import java.util.regex.Pattern;
  */
 
 public class LogicForIssue6 {
+    private static final Logger logger = (Logger) LogManager.getLogger(LogicForIssue6.class);
 
     public void issue6WriteToFile(String inputTextFromFile) {
+
         /*
          * Creating ArrayList. It's need for sorting method.
          */
@@ -23,6 +27,7 @@ public class LogicForIssue6 {
 
         Pattern pattern = Pattern.compile(MyPattern.WORD_REGEX);
         Matcher matcher = pattern.matcher(inputTextFromFile);
+        logger.error("Issue 6 : my first error logger.");
         /*
          * Finding words.
          */

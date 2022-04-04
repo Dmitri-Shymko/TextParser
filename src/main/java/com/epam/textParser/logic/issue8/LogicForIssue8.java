@@ -1,8 +1,10 @@
 package com.epam.textParser.logic.issue8;
 
-import com.epam.textParser.entity.FileName;
+import com.epam.textParser.entity.filename.FileName;
 import com.epam.textParser.logic.util.Util;
 import com.epam.textParser.entity.pattern.MyPattern;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,6 +16,7 @@ import java.util.regex.Pattern;
  */
 
 public class LogicForIssue8 {
+    private static final Logger logger = (Logger) LogManager.getLogger(LogicForIssue8.class);
 
     public void issue8WriteToFile(String inputTextFromFile) {
         /*
@@ -24,6 +27,7 @@ public class LogicForIssue8 {
 
         Pattern pattern = Pattern.compile(MyPattern.VOWEL_REGEX);
         Matcher matcher = pattern.matcher(inputTextFromFile);
+        logger.error("Issue 8 : my first error logger.");
         /*
          * Finding vowels.
          */

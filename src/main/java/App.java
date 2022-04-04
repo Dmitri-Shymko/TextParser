@@ -1,4 +1,4 @@
-import com.epam.textParser.entity.FileName;
+import com.epam.textParser.entity.filename.FileName;
 import com.epam.textParser.logic.issue12.LogicForIssue12;
 import com.epam.textParser.logic.issue6.LogicForIssue6;
 import com.epam.textParser.logic.issue8.LogicForIssue8;
@@ -37,15 +37,24 @@ public class App {
         codeParser.parseToFile(inputTextFromFile);
         wordParser.parseToFile(inputTextFromFile);
         symbolParser.parseToFile(inputTextFromFile);
-
+        /*
+         * Creating new TreeMaps for words and symbols.
+         */
         TreeMap<Integer, String> words = wordParser.parseToMap(inputTextFromFile);
         TreeMap<Integer, String> symbols = symbolParser.parseToMap(inputTextFromFile);
-
+        /*
+         * Uniting TreeMaps.
+         */
         words.putAll(symbols);
-
+        /*
+         * Creating new file with final result.
+         */
         for (Map.Entry entry : words.entrySet()) {
              Util.makeFile(FileName.TEXT_ON_FINISH, entry.getValue().toString());
         }
+        /*
+         * Additional issues. Results are written to files.
+         */
         LogicForIssue6 logicForIssue6 = new LogicForIssue6();
         LogicForIssue8 logicForIssue8 = new LogicForIssue8();
         LogicForIssue12 logicForIssue12 = new LogicForIssue12();

@@ -1,8 +1,10 @@
 package com.epam.textParser.logic.issue12;
 
-import com.epam.textParser.entity.FileName;
+import com.epam.textParser.entity.filename.FileName;
 import com.epam.textParser.logic.util.Util;
 import com.epam.textParser.entity.pattern.MyPattern;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,6 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LogicForIssue12 {
+    private static final Logger logger = (Logger) LogManager.getLogger(LogicForIssue12.class);
 
     public void issue12WriteToFile(String inputTextFromFile, int deletedWordLength) {
         /*
@@ -21,6 +24,7 @@ public class LogicForIssue12 {
          */
         Pattern pattern = Pattern.compile(MyPattern.CONSONANTS_REGEX);
         Matcher matcher = pattern.matcher(inputTextFromFile);
+        logger.error("Issue 12 : my first error logger.");
 
         try {
             while (matcher.find()) {
